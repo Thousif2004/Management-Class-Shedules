@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Management System</title>
+    <style>
+        /* Some basic styling */
+        body {
+            background-image: url('background_image.jpg');
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            width:100%;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            display: inline-block;
+            animation: rainbowText 4s infinite;
+        }
+
+        @keyframes rainbowText {
+            0% { color: red; }
+            16.666% { color: orange; }
+            33.333% { color: yellow; }
+            50% { color: green; }
+            66.666% { color: blue; }
+            83.333% { color: indigo; }
+            100% { color: violet; }
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .container {
+            padding: 20px;
+        }
+        /* Added style for anchor tags */
+        .container ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .container li {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        /* Added style for anchor tags */
+        .container a {
+            color: blue;
+            text-decoration: none;
+        }
+        /* Style for anchor tags on hover */
+        .container a:hover {
+            text-decoration: underline;
+        }
+        .container li {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            background-color: #c7e4f1; /* Background color for modules */
+        }
+        /* Style for submenu */
+        .submenu {
+            display: none;
+            padding-left: 20px;
+        }
+        /* Style for submenu items */
+        .submenu a {
+            display: block;
+            margin-bottom: 5px;
+            color: green;
+            text-decoration: none;
+        }
+        /* Style for submenu items on hover */
+        .submenu a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    
+    <h1><u><b>Presidency University Management System</b></u></h1>
+</header>
+
+<img src="https://www.iesonline.co.in/colleges-image/presidency-university.jpg">
+<div class="container">
+    <ul>
+        <li><a href="#" class="toggle-submenu" data-target="user_management">User Management Module</a></li>
+        <li><a href="#" class="toggle-submenu" data-target="student_module">Student Module</a></li>
+        <li><a href="#" class="toggle-submenu" data-target="faculty_module">Faculty Module</a></li>
+        <li><a href="#" class="toggle-submenu" data-target="course_module">Course Module</a></li>
+        <li><a href="#" class="toggle-submenu" data-target="enrollment_module">Enrollment Module</a></li>
+        <li><a href="#" class="toggle-submenu" data-target="library_module">Library Module</a></li>
+        <li><a href="#" class="toggle-submenu" data-target="finance_module">Finance Module</a></li>
+        <li><a href="index2.html">Schedule Module</a>
+        </li>
+    </ul>
+</div>
+<br><br><br><br>
+
+<footer>
+    <p>Md Thousif B C &copy; 6CSE6</p>
+</footer>
+
+<script>
+    // JavaScript to toggle submenu
+    const toggleSubmenu = (targetId) => {
+        const submenu = document.getElementById(targetId);
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    };
+
+    // Add event listeners to toggle submenu on click
+    const submenuLinks = document.querySelectorAll('.toggle-submenu');
+    submenuLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const targetId = event.target.getAttribute('data-target');
+            toggleSubmenu(targetId + '_submenu');
+        });
+    });
+</script>
+
+</body>
+</html>
